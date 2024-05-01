@@ -1,0 +1,55 @@
+{
+    "name": "honhat/convert-currency",
+    "description": "Laravel module for currency conversion functionalities",
+    "keywords": [
+        "laravel",
+        "currency",
+        "conversion",
+        "exchange",
+        "money"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ho Nhat",
+            "email": "vannhattd@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "laravel/framework": "^8.0",
+        "vendor/convert-currency": "^1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Modules\\ConvertCurrency\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "App\\Modules\\ConvertCurrency\\Providers\\ConvertCurrencyServiceProvider"
+            ],
+            "paths": {
+                "migrations": [
+                    "app/Modules/ConvertCurrency/Database/Migrations"
+                ]
+            },
+            "config": [
+                {
+                    "source": "app/Modules/ConvertCurrency/config/currency.example.php",
+                    "destination": "../vendor/laravel/framework/config",
+                    "namespace": "currency"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
